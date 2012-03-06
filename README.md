@@ -57,3 +57,23 @@ Callback urls:
 - github: `/auth/github/callback`
 - linkedin: `/auth/linkedin/callback`
 
+Example before filter (describe in your application controller):
+
+```javascript
+before(function requireManager() {
+    if (!session.passport.user) {
+        req.session.redirect = req.path;
+        redirect('/auth/linkedin');
+    } else {
+        User.find(session.passport.user, function (err, user) {
+            if (user && user.email === 'my.email@somehost.tld') {
+                req.user = user;
+                next();
+            } else {
+                flash('error', 'You have no permission to access this area');
+                redirect('/');
+            }
+        });
+    }
+});
+```
