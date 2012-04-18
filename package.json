@@ -9,7 +9,7 @@
   },
   "main": "lib/passport.js",
   "engines": {
-    "node": "~0.6.10"
+    "node": ">= 0.6.x"
   },
   "dependencies": {},
   "devDependencies": {},
