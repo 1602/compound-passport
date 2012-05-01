@@ -10,19 +10,19 @@ PassportJS auth library integrated into RailwayJS. Why this package needed? To b
 var rwps = require('railway-passport');
 
 app.configure(function () {
-    // some common stuff
+    // some common stuff (methodOverride, cookie and body parser, session)
 
     // init passport
     rwps.init();
-
     // hook up user model
     process.nextTick(function () {
-        rwpass.loadUser(User);
+        rwps.loadUser(User);
     });
-
     app.use(app.router);
 });
 ```
+
+Please not that order of middlewares is important! `rwps.init();` should go right before app.router middleware.
 
 ### 2. config/passport.yml
 
