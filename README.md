@@ -1,13 +1,13 @@
 ## About
 
-PassportJS auth library integrated into RailwayJS. Why this package needed? To be honest, PassportJS is dead-simple in integrating. But it can be simplier. This package for authentication without extra coding, just configure it and use
+PassportJS auth library integrated into CompoundJS. Why this package needed? To be honest, PassportJS is dead-simple in integrating. But it can be simplier. This package for authentication without extra coding, just configure it and use
 
 ## Setup project
 
 ### 1. config/environment.js:
 
 ```javascript
-var rwps = require('railway-passport');
+var rwps = require('compound-passport');
 
 app.configure(function () {
     // some common stuff (methodOverride, cookie and body parser, session)
