@@ -2,7 +2,7 @@
   "author": "Anatoliy Chakkaev <rpm1602@gmail.com>, modified by @yawetse, @dsiu",
   "name": "compound-passport",
   "description": "PassportJS integrated with Compound",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "repository": {
     "type": "git",
     "url": "git@github.com:yawetse/compound-passport.git"
@@ -11,7 +11,9 @@
   "engines": {
     "node": ">= 0.6.x"
   },
-  "dependencies": {},
+  "dependencies": {
+      "yamljs" : "~0.1.4"
+    },
   "devDependencies": {},
   "optionalDependencies": {}
 }
