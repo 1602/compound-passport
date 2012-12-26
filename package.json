@@ -1,8 +1,8 @@
 {
-  "author": "Anatoliy Chakkaev <rpm1602@gmail.com>",
+  "author": "Anatoliy Chakkaev <rpm1602@gmail.com>, modified by @yawetse",
   "name": "compound-passport",
   "description": "PassportJS integrated with Compound",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository": {
     "type": "git",
     "url": "git@github.com:1602/Railway-passport.git"
