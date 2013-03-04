@@ -4,31 +4,19 @@ PassportJS auth library integrated into CompoundJS. Why this package needed? To 
 
 ## Setup project
 
-### 1. config/environment.js:
+### 1. config/environment.js
 
-```javascript
-var rwps = require('compound-passport');
-var User = compound.models.User;
 
 app.configure(function () {
     // some common stuff (methodOverride, cookie and body parser, session)
 
-    // init passport
-    //rwps.init(); - this is now in asset complier init
-    // hook up user model
-    //process.nextTick(function () {
-    //    rwps.loadUser(User);
-    //});
-
-    compound.on('models loaded', function(){
-        User = compound.models.User;
-        rwps.loadUser(User);
-    });
+    // init passport before app.router
+    rwps.init();
     app.use(app.router);
 });
 ```
 
-Please not that order of middlewares is important! `rwps.init();` should go right before app.router middleware.
+Please not that order of middlewares is important! `rwps.init();` should go right before `app.use(app.router)`
 
 ### 2. config/passport.yml
 
@@ -86,7 +74,7 @@ before(function requireManager() {
 
 ## MIT License
 
-```
+```text
 Copyright (C) 2012 by Anatoliy Chakkaev
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
