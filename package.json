@@ -1,8 +1,8 @@
 {
   "author": "Anatoliy Chakkaev <rpm1602@gmail.com>",
-  "name": "railway-passport",
-  "description": "PassportJS integrated with Railway",
-  "version": "0.0.4",
+  "name": "compound-passport",
+  "description": "PassportJS integrated with CompoundJS",
+  "version": "0.0.5",
   "repository": {
     "type": "git",
     "url": "git@github.com:1602/Railway-passport.git"
