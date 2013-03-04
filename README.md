@@ -4,22 +4,6 @@ PassportJS auth library integrated into CompoundJS. Why this package needed? To 
 
 ## Setup project
 
-### 1. config/environment.js
-
-
-app.configure(function () {
-    // some common stuff (methodOverride, cookie and body parser, session)
-
-    // init passport before app.router
-    rwps.init();
-    app.use(app.router);
-});
-```
-
-Please not that order of middlewares is important! `rwps.init();` should go right before `app.use(app.router)`
-
-### 2. config/passport.yml
-
 ```yaml
 development:
   baseURL: 'http://localhost:3000/'
@@ -35,6 +19,14 @@ production:
   github:
     clientID: "...."
     secret: "...."
+```
+
+Add module to config/autoload.js:
+
+```javascript
+module.exports = function() {
+    return [require('compound-passport')];
+};
 ```
 
 ## Use
