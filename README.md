@@ -7,7 +7,7 @@ PassportJS auth library integrated into CompoundJS. Why this package needed? To 
 ```yaml
 development:
   baseURL: 'http://localhost:3000/'
-  google: yes
+  google: true
   github:
     clientID: "a8578b8dc47834908338"
     secret: "d8107d7cd75fc8ee1f12cf1f38b3aa065c3ec2ac"

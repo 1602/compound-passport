@@ -11,6 +11,9 @@
   "engines": {
     "node": ">= 0.6.x"
   },
+  "dependencies": {
+    "yaml-js": ">= 0.0.2"
+  },
   "devDependencies": {},
   "optionalDependencies": {}
 }
