@@ -3,10 +3,11 @@
 PassportJS auth library integrated into CompoundJS. Why this package needed? To be honest, PassportJS is dead-simple in integrating. But it can be simplier. This package for authentication without extra coding, just configure it and use
 
 ## Setup project
-
+Put the following configuration in ```config/passport.yml```.
 ```yaml
 development:
   baseURL: 'http://localhost:3000/'
+  local: true
   google: true
   github:
     clientID: "a8578b8dc47834908338"
@@ -21,7 +22,7 @@ production:
     secret: "...."
 ```
 
-Add module to config/autoload.js:
+Add module to ```config/autoload.js```:
 
 ```javascript
 module.exports = function() {
