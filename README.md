@@ -22,6 +22,28 @@ production:
     secret: "...."
 ```
 
+To separate configuration from code simply use "process.env" directly in the configuration file:
+
+```yaml
+development:
+  baseURL: 'http://localhost:3000/'
+  local: true
+  google: true
+  github:
+    apiKey: "process.env.GITHUB_API_KEY"
+    secret: "process.env.GITHUB_API_SECRET"
+  linkedin:
+    apiKey: "process.env.LINKEDIN_API_KEY"
+    secret: "process.env.LINKEDIN_API_SECRET"
+production:
+  baseURL: 'http://node-js.ru/'
+  github:
+    clientID: "...."
+    secret: "...."
+```
+
+The module will then automatically read environment variables and use those.
+
 Add module to ```config/autoload.js```:
 
 ```javascript
