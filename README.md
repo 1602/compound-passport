@@ -1,8 +1,14 @@
 ## About
 
-PassportJS auth library integrated into CompoundJS. Why this package needed? To be honest, PassportJS is dead-simple in integrating. But it can be simplier. This package for authentication without extra coding, just configure it and use
+[PassportJS](http://passportjs.org) auth library integrated into CompoundJS. This package allows authentication without any extra coding - just configure and use.
 
-## Setup project
+## Setup
+**Step 1:** Install dependencies
+
+Add `compound-passport`, `passport`, and any providers used to your `package.json` and run `npm install`. Remember to add the used Passport Strategies to your `package.json`, e.g. `passport-facebook`, `passport-github`, etc. -- see [PassportJS providers](http://passportjs.org/guide/providers/).
+
+**Step 2:** Configure
+
 Put the following configuration in ```config/passport.yml```.
 ```yaml
 development:
@@ -30,7 +36,7 @@ development:
   local: true
   google: true
   github:
-    apiKey: "process.env.GITHUB_API_KEY"
+    clientId: "process.env.GITHUB_API_KEY"
     secret: "process.env.GITHUB_API_SECRET"
   linkedin:
     apiKey: "process.env.LINKEDIN_API_KEY"
@@ -44,6 +50,8 @@ production:
 
 The module will then automatically read environment variables and use those.
 
+**Step 3:** Add module
+
 Add module to ```config/autoload.js```:
 
 ```javascript
@@ -51,6 +59,7 @@ module.exports = function() {
     return [require('compound-passport')];
 };
 ```
+
 
 ## Use
 
@@ -63,8 +72,8 @@ Just visit `/auth/google` to sign in with google:
 
 Callback urls:
 
-- github: `/auth/github/callback`
-- linkedin: `/auth/linkedin/callback`
+- GitHub: `/auth/github/callback`
+- LinkedIn: `/auth/linkedin/callback`
 
 Example before filter (describe in your application controller):
 
