@@ -5,7 +5,7 @@
   "version": "0.0.7-4",
   "repository": {
     "type": "git",
-    "url": "git@github.com:co-/-passport.git"
+    "url": "git@github.com:com/1602/compound-passport.git"
   },
   "main": "lib/passport.js",
   "engines": {
