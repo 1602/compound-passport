@@ -13,6 +13,7 @@ Put the following configuration in ```config/passport.yml```.
 ```yaml
 development:
   baseURL: 'http://localhost:3000/'
+  logoutURL: 'http://localhost:3000/auth/'
   local: true
   google: true
   github:
@@ -23,6 +24,7 @@ development:
     secret: "p3iBqlybJ5WNTINv"
 production:
   baseURL: 'http://node-js.ru/'
+  logoutURL: 'http://node-js.ru/admin/'
   github:
     clientID: "...."
     secret: "...."
@@ -33,6 +35,7 @@ To separate configuration from code simply use "process.env" directly in the con
 ```yaml
 development:
   baseURL: 'http://localhost:3000/'
+  logoutURL: 'http://localhost:3000/auth/'
   local: true
   google: true
   github:
@@ -43,6 +46,7 @@ development:
     secret: "process.env.LINKEDIN_API_SECRET"
 production:
   baseURL: 'http://node-js.ru/'
+  logoutURL: 'http://node-js.ru/admin/'
   github:
     clientID: "...."
     secret: "...."
@@ -74,6 +78,16 @@ Callback urls:
 
 - GitHub: `/auth/github/callback`
 - LinkedIn: `/auth/linkedin/callback`
+
+Logout:
+
+Provide by `logout()` function from `passportjs`, see [passportjs#logout](http://passportjs.org/guide/logout/).
+
+Easily configurable in config.yml file, just add logout redirection url (default is '/'):
+
+```yaml
+logoutURL: '/auth/'
+```
 
 Example before filter (describe in your application controller):
 
